@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout rootView;
     private WindowManager wml;
-    private Paint mPaint;
+//    private Paint mPaint;
 //    private Canvas canvas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,37 +57,31 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        onCreateBall(Integer.valueOf(editText.getText().toString()));
+                        createBall(Integer.valueOf(editText.getText().toString()));
                     }
 
                 }).show();
 
     }
 
-    private void onCreateBall(int radius) {
+    private void createBall(int radius) {
         if (radius > 150) return;
-//        getWindowManager()
         WindowManager wm1 = this.getWindowManager();
         int width = wm1.getDefaultDisplay().getWidth();
         int height = wm1.getDefaultDisplay().getHeight();
-        int x = (int)Math.random() * (width - radius * 2);
-        int y = (int)Math.random() * (height - radius * 2);
+
+//        int ball = (com.example.ball.customView)findViewById(R.id.nav);
 
 
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-//        mPaint.setColor(black);
-        mPaint.setColor(Color.BLACK);
-//        onDraw();
-//        Canvas canvas = new Canvas();Canvas
-//        canvas.drawRect(0,0,200,200,mPaint);
-//        canvas.drawCircle(100, 100,100,mPaint);
-//        canvas.drawCircle(x, y, radius, mPaint);
+//        int x = (int)Math.random() * (width - radius * 2);
+//        int y = (int)Math.random() * (height - radius * 2);
+
+
     }
 
-    protected void onDraw(Canvas canvas) {
-        canvas.drawColor(Color.BLACK);
-    }
+//    protected void onDraw(Canvas canvas) {
+//        canvas.drawColor(Color.BLACK);
+//    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
