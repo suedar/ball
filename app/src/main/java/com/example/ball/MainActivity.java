@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     private LinearLayout rootView;
     private WindowManager wml;
-//    private Paint mPaint;
-//    private Canvas canvas;
+    private View customView;
+    private customView myCus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+//                        myCus.fresh(Integer.valueOf(editText.getText().toString()));
                         createBall(Integer.valueOf(editText.getText().toString()));
                     }
 
@@ -65,14 +66,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createBall(int radius) {
+
         if (radius > 150) return;
         WindowManager wm1 = this.getWindowManager();
         int width = wm1.getDefaultDisplay().getWidth();
         int height = wm1.getDefaultDisplay().getHeight();
-
+        System.out.println(">>>>>>>>>>>>>>"+width+height+radius);
+//        myCus = new customView();
+        customView nav = (customView)findViewById(R.id.nav);
+        nav.fresh(width, height, radius);
 //        int ball = (com.example.ball.customView)findViewById(R.id.nav);
 
-
+//        findViewById(R.id.nav)
 //        int x = (int)Math.random() * (width - radius * 2);
 //        int y = (int)Math.random() * (height - radius * 2);
 
